@@ -1,0 +1,123 @@
+:root {
+  --color-text: #111827;
+  --color-lines: #545454;
+  --color-bg: #fff;
+  --color-button-bg: #404040;
+}
+
+.services-list-section {
+  background-color: var(--color-bg);
+  padding: 4rem 1rem;
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+}
+
+.services-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.services-list-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.view-all-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #f8f8fa;
+  color: #111827;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition:
+    border-bottom 0.15s,
+    color 0.15s,
+    background 0.15s;
+}
+
+.view-all-button:hover {
+  background-color: #fff;
+  color: #111827;
+  border: 2px solid #111827;
+  border-bottom: 4px solid #000;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.service-item .service-number {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  font-weight: 400;
+}
+
+.service-item .service-title {
+  margin-left: 1.5rem;
+}
+
+.service-item .service-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--color-lines);
+  margin: 0 0.5rem;
+}
+
+.services-grid .service-item:nth-last-child(-n + 2) {
+  margin-bottom: 0;
+}
+
+.service-item::before,
+.service-item::after {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .services-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .services-list-title {
+    margin-bottom: 1rem;
+  }
+  
+  .service-item {
+    font-size: 1.2rem;
+  }
+  
+  .service-item .service-number {
+    font-size: 1.5rem;
+  }
+
+  .service-item .service-line {
+    min-width: 24px;
+    max-width: 60px;
+  }
+}

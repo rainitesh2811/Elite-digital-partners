@@ -1,0 +1,56 @@
+/* Project.css */
+.projects-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.highlighted-project-title {
+  color: #000;
+  font-size: 2.0rem;
+  text-align: justify;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  font-weight:inherit;
+  margin-left: 9rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.regular-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #4a4a4a;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.project-card:hover {
+  transform: scale(1.03) translateY(-5px); /* Adds a slight upward scale */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* More prominent shadow */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+.project-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-details {
+  padding: 15px;
+}
+
+.project-card-details h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
