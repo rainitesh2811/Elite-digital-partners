@@ -3,29 +3,30 @@ import Navbar from "./components/Nav/Navbar";
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Service";
 import Projects from "./components/Portfolio/project";
+import Testimonials from "./components/Testimonial/testimonial";
 
 function App() {
-  // 1. Create a ref to reference the Services component.
   const servicesRef = useRef(null);
-  // 2. Create a ref for the Projects component to handle scrolling.
   const projectsRef = useRef(null);
+  const testimonialsRef = useRef(null);
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Renders the Navbar and passes both servicesRef and projectsRef for scrolling */}
-      <Navbar servicesRef={servicesRef} projectsRef={projectsRef} />
+      {/* Pass all refs to the Navbar for scrolling */}
+      <Navbar servicesRef={servicesRef} projectsRef={projectsRef} testimonialsRef={testimonialsRef} />
       
-      {/* Renders the Hero section */}
       <Hero />
       
-      {/* Renders the Services section, attached to the ref */}
       <div ref={servicesRef}>
         <Services />
       </div>
       
-      {/* Renders the Projects section, now attached to its own ref */}
       <div ref={projectsRef}>
         <Projects />
+      </div>
+
+      <div ref={testimonialsRef}>
+        <Testimonials />
       </div>
     </div>
   );

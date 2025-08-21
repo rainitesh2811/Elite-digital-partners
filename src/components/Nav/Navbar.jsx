@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "../Nav/Nav.css";
 
-// Accept projectsRef as a prop
-const Navbar = ({ servicesRef, projectsRef }) => {
+const Navbar = ({ servicesRef, projectsRef, testimonialsRef }) => {
     const [open, setOpen] = useState(false);
-    
+
     // Set a constant for the desired offset from the top of the viewport
     const SCROLL_OFFSET = 50; 
 
@@ -16,8 +15,7 @@ const Navbar = ({ servicesRef, projectsRef }) => {
     const handleServicesClick = () => {
         if (servicesRef && servicesRef.current) {
             const elementPosition = servicesRef.current.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - SCROLL_OFFSET;
-            
+            const offsetPosition = elementPosition + window.pageYOffset - SCROLL_OFFSET
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
@@ -35,6 +33,20 @@ const Navbar = ({ servicesRef, projectsRef }) => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+        }
+        setOpen(false);
+    };
+
+    // New handler for the Testimonials button
+    const handleTestimonialsClick = () => {
+        if (testimonialsRef && testimonialsRef.current) {
+        const elementPosition = testimonialsRef.current.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - SCROLL_OFFSET;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
         }
         setOpen(false);
     };
@@ -57,7 +69,7 @@ const Navbar = ({ servicesRef, projectsRef }) => {
                 <button className="custom-btn" onClick={handleTitleClick}>Home</button>
                 <button className="custom-btn" onClick={handleServicesClick}>Services</button>
                 <button className="custom-btn" onClick={handlePortfolioClick}>Portfolio</button>
-                <button className="custom-btn" onClick={handleServicesClick}>Testimonials</button>
+                <button className="custom-btn" onClick={handleTestimonialsClick}>Testimonials</button>
                 <button className="custom-btn" onClick={handleServicesClick}>Contact Us</button>
             </div>
         </nav>
